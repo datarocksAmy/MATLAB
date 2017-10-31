@@ -3,6 +3,7 @@
 % ( Find the optimized goal and spread value. )
 % ---------------------------------------------
 
+% Clear memory data
 clear all;
 clc;
 
@@ -27,11 +28,14 @@ simulation_results = [];
 
 % Goal loop until it reaches 1
 while( goal <= 1 )
+    
     % Initialize spread as 1
     reg_spread = 1;
+    
     % Spread loop until it reaches 35
     while(reg_spread <= 35)
         
+        % Train the Reguar RBF net
         RBF_regular	= newrb(trainP, trainT, goal, reg_spread, 200, 50);
 
         % Network Output using validation 
@@ -39,8 +43,11 @@ while( goal <= 1 )
 
         % MSE Error for validation
         Validation_MSE = mse(RBFRegular_output - valT);
-        disp(Validation_MSE);
+       
+        % Store the simulation result when Validation MSE is between 0.5
+        % and 0.51
         if(Validation_MSE >= 0.5 && Validation_MSE <= 0.51 )
+            
             % Store all simulation valules : goal, spread, validation MSE
             results = [goal, reg_spread, Validation_MSE];
             simulation_results = vertcat(simulation_results, results);
@@ -51,6 +58,7 @@ while( goal <= 1 )
         elseif(Validation_MSE < 0.5)
             break
         end
+        
         % Increment spread by 1
         reg_spread = reg_spread + 1;
         
