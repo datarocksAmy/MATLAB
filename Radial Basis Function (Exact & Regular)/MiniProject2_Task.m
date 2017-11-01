@@ -42,7 +42,7 @@ Validation_MSE_exact = mse(Exact_val_output - valT);
 Test_MSE_exact = mse(Exact_test_output - testT);
 
 % Display Exact RBF Test MSE
-fprintf("Test MSE for EXACT RBF : " );
+fprintf('Test MSE for EXACT RBF : ');
 disp(Test_MSE_exact);
 
 % Confusion Matrix for Exact RBF ( Train, Validation, Test )
@@ -90,7 +90,7 @@ Validation_MSE_reg = mse(Reg_val_output - valT);
 Test_MSE_reg = mse(Reg_test_output - testT);
 
 % Display Refular Test MSE
-fprintf("Test MSE for REGULAR RBF : " );
+fprintf('Test MSE for REGULAR RBF : ');
 disp(Test_MSE_reg);
 
 % Confusion Matrix for Regular RBF
