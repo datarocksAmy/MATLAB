@@ -1,8 +1,8 @@
 % Categorical labels for all 4 movements of data
 
 function[ xLabel, zLabel, allXLabel, allZLabel ] = classLabel(movement)
-% Categorical name to number based on movement
 
+% Categorical name to number based on movement
 if strcmp(movement, 'Circle') == 1
     move = 1;
 elseif strcmp(movement, 'Triangle') == 1
@@ -17,10 +17,11 @@ end
 xL(1:300) = move;
 zL(1: 300) = move;
 
-
+% Transpose to column
 xLabel = xL';
 zLabel = zL';
 
+% Concat 3 folds of x, z into one column
 allXLabel = cat(1, xLabel, xLabel, xLabel);
 allZLabel = cat(1, zLabel, zLabel, zLabel);
 
