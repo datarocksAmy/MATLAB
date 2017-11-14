@@ -18,5 +18,5 @@ RTarget = [notClass, notClass, isClass, notClass];
 DTarget = [notClass, notClass, notClass, isClass];
 
 % Stack all 4 movements of targets 
-movementT = [CTarget; TTarget; RTarget; DTarget];
+stackMovementT = [CTarget; TTarget; RTarget; DTarget];
 
