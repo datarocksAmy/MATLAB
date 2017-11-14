@@ -1,5 +1,5 @@
 % One Hot Target for all 4 Movements
-function[ stackMovementT ] = movementTarget();
+function[ stackMovementT ] = movementTarget()
 
 % Vectors for 1s ( is Class ) and -1s ( Not Class ) 
 isClass = ones(1,300);
