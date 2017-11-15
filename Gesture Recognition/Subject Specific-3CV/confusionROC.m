@@ -24,6 +24,8 @@ saveas(figure(4), [pwd '\ROC\3CV\', person , '\', person, '_OverallROC.fig']);
 InitMovemntTestModify = (stackMovementTest + 1 )/2;
 lastRPredTestModify = (predictTestT3 + 1)/2;
 
+% Plot Confusion Matrix
 confusionG = plotconfusion(InitMovemntTestModify, lastRPredTestModify, person);
+% Save the matrix
 saveas(confusionG, [pwd '\ROC\3CV\', person , '\',  person, '_Confusion.fig'])
 end
