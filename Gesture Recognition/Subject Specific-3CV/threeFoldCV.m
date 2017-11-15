@@ -63,8 +63,7 @@ predictTestT2 = cell2mat(predictTestT2_pack);
 trained3CVnet= train(f2net, X3s, T3s, X3i, A3i);
 
 % Save 3-CV Trained Net
-netName = strcat(person, '_3CVNet');
-save netName, trained3CVnet;
+save trained3CVnet;
 
 % Test 3
 predictTestT3_pack = trained3CVnet(f3Test);
