@@ -32,6 +32,14 @@ TDNNnet.trainParam.epochs = 100;
 [trained3CVnet_P5, predictTestT1_P5, predictTestT2_P5, predictTest_P5, stackMovementTest_P5] = threeFoldCV(TDNNnet, P5_C, P5_T, P5_R, P5_D);
 [trained3CVnet_P6, predictTestT1_P6, predictTestT2_P6, predictTest_P6, stackMovementTest_P6] = threeFoldCV(TDNNnet, P6_C, P6_T, P6_R, P6_D);
 
+% Save 3-CV Trained Net
+save trained3CVnet_P1;
+save trained3CVnet_P2;
+save trained3CVnet_P3;
+save trained3CVnet_P4;
+save trained3CVnet_P5;
+save trained3CVnet_P6;
+
 % Plot ROC for CV1, CV2, CV3 and overall CV + save all graphs
 confusionROC('Person1', predictTestT1_P1, predictTestT2_P1, predictTest_P1, stackMovementTest_P1);
 confusionROC('Person2', predictTestT1_P2, predictTestT2_P2, predictTest_P2, stackMovementTest_P2);
