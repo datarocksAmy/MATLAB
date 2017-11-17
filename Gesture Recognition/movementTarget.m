@@ -23,6 +23,9 @@ RTarget_Test = [notClass, notClass, isClass, notClass];
 DTarget_Train = [notClass, notClass, notClass, isClass, notClass, notClass, notClass, isClass];
 DTarget_Test = [notClass, notClass, notClass, isClass];
 
+stackMovementTrain = [CTarget_Train; TTarget_Train; RTarget_Train; DTarget_Train];
+stackMovementTest = [CTarget_Test; TTarget_Test; RTarget_Test; DTarget_Test];
+
 % Target for 6 CV
 elseif strcmp(foldType, '6 Fold') == 1
 % Circle
@@ -51,10 +54,13 @@ stackMovementTest = [CTarget_Test; TTarget_Test; RTarget_Test; DTarget_Test];
 
 % Target for Prefold
 elseif strcmp(foldType, 'Prefold') == 1
-preTarget = [isClass, notClass, notClass, notClass];    
+preTarget_C = [isClass, notClass, notClass, notClass];    
+preTarget_T = [notClass, isClass, notClass, notClass];    
+preTarget_R = [notClass, notClass, isClass, notClass];    
+preTarget_D = [notClass, notClass, notClass, isClass];    
 
-stackMovementTrain = preTarget;
-stackMovementTest = preTarget;
+stackMovementTrain = [preTarget_C; preTarget_T; preTarget_R; preTarget_D];
+stackMovementTest = [preTarget_C; preTarget_T; preTarget_R; preTarget_D];
 
 end
 end
