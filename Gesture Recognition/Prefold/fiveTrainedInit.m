@@ -1,5 +1,5 @@
 % Train 5 times for the Initial Net
-function[ InitResultMatrix ] = fiveTrainedInit(net, seqTrainxz, seqValxz,  seqTrainxzT)
+function[ ResultMatrix ] = fiveTrainedInit(net, seqTrainxz, seqValxz,  seqTrainxzT)
 
 InitResultMatrix = zeros(4, 4, 5);
 
@@ -20,6 +20,9 @@ for run = (1:5)
     % Store in the 4 x 4 x 5 Matrix for all 5 runs
     InitResultMatrix(:, :, run) = properConfusionPredict;
 end
+
+% Average out into 4 x 4 x 1 Matrix
+ResultMatrix = (InitResultMatrix(:, :, 1) + InitResultMatrix(:, :, 2) + InitResultMatrix(:, :, 3) + InitResultMatrix(:, :, 4) + InitResultMatrix(:, :, 5))/5;
 
 end
 
