@@ -16,13 +16,8 @@ close all
 [ P5_C, P5_T, P5_R, P5_D ]  = Encapsulate('GestureData\Person5.xls');
 [ P6_C, P6_T, P6_R, P6_D ]  = Encapsulate('GestureData\Person6.xls');
 
-% 1-D Time Delay Nerual Network ( 1 Hidden Layer )
-TDNNnet = timedelaynet(1:30, 1, 'trainbr');
-TDNNnet.layers{2}.transferFcn = 'tansig';
-TDNNnet.divideParam.trainRatio = 1;
-TDNNnet.divideParam.valRatio = 0;
-TDNNnet.divideParam.testRatio = 0;
-TDNNnet.trainParam.epochs = 100;
+% Load Time Delay Nerual Network
+load('Depth15NodeNum30_Net.mat');
 
 % 3 Fold Cross Validation
 [trained3CVnet_P1, predictTestT1_P1, predictTestT2_P1, predictTest_P1, stackMovementTest_P1] ...
@@ -38,13 +33,6 @@ TDNNnet.trainParam.epochs = 100;
 [trained3CVnet_P6, predictTestT1_P6, predictTestT2_P6, predictTest_P6, stackMovementTest_P6] ...
                                                                                             = threeFoldCV(TDNNnet, P6_C, P6_T, P6_R, P6_D);
 
-% Save 3-CV Trained Net
-save trained3CVnet_P1;
-save trained3CVnet_P2;
-save trained3CVnet_P3;
-save trained3CVnet_P4;
-save trained3CVnet_P5;
-save trained3CVnet_P6;
 
 % Plot ROC for CV1, CV2, CV3 and overall CV + save all graphs
 confusionROC('Person1', predictTestT1_P1, predictTestT2_P1, predictTest_P1, stackMovementTest_P1);
