@@ -1,9 +1,10 @@
 % Plot and save ROC and Confusion Matrix for Pre-fold
-function prefoldConfusionROC(stackMovementVal , InitResultMatrix, stackFiveMatrixAvg, netname)
+function prefoldConfusionROC(stackMovementVal , InitResultMatrix, stackFiveMatrixAvg, netname, count)
 
 % ROC Curve + Save
+
 ezroc3(InitResultMatrix);
-saveas(figure(1), [pwd '\ROC\Prefold\ROC\', netname , '_ROC.fig']);
+saveas(figure(count), [pwd '\ROC\Prefold\ROC\', netname , '_ROC.fig']);
 
 % Plot Confusion Matrix
 % Class 1/--1 to 1/0
@@ -14,6 +15,6 @@ comboPredModify = (stackFiveMatrixAvg + 1)/2;
 confusionPre = plotconfusion(InitMovemntValModify, comboPredModify);
 
 % Save the matrix
-saveas(confusionPre, [pwd '\ROC\Prefold\Confusion', netname , '_Confusion.fig'])
+saveas(confusionPre, [pwd '\ROC\Prefold\Confusion\', netname , '_Confusion.fig'])
 
 end
