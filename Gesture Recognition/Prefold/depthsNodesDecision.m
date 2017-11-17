@@ -1,10 +1,8 @@
 % Train with 3 different depths and 3 different number of nodes = 9 combo
-
+function depthsNodesDecision(P2_xz)
 % Different combinations of depths and number of nodes
 depthInput = [15, 30, 60];
 numNodes = [5, 15, 30];
-% Labels
-[ MovementTrain, MovementTest ] = movementTarget('Prefold');
 
 % Generate 9 different nets for all possible combinations
 for depthIdx = (1:3)
@@ -28,7 +26,7 @@ for depthIdx = (1:3)
         seqValxz = con2seq( valxz );
         
        % 5 Simulation Matrices then Average 5 dimension 4 x 4 to 1 dimension
-        [ InitResultMatrix ] = fiveTrainedInit(TDNNnet, seqTrainxz, seqValxz,  seqTrainxzT);
+        [  initPredMatrix, Result4by4Matrix, stackFiveMatrixAvg ] = fiveTrainedInit(TDNNnet, seqTrainxz, seqValxz,  seqTrainxzT);
         
         % Save 9 Different TDNN Nets
         count = 1;
@@ -40,11 +38,15 @@ for depthIdx = (1:3)
         netname = strcat('Depth', int2str(depthInput(depthIdx)), 'NodeNum', int2str(numNodes(nodeIdx)), '_Net');
 
         % Store Matrix
-         comboMatrix(:, :, count) = InitResultMatrix;
+         comboMatrix(:, :, count) = Result4by4Matrix;
          
+         % Plot + Save ROC + Confusion Matrix
+         prefoldConfusionROC(stackMovementVal , initPredMatrix, stackFiveMatrixAvg, netname); 
+        
          % Save Net
          save(netname ,'TDNNnet');
          count  = count + 1;
                
     end
+end
 end

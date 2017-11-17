@@ -1,7 +1,8 @@
 % Train 5 times for the Initial Net
-function[ ResultMatrix ] = fiveTrainedInit(net, seqTrainxz, seqValxz,  seqTrainxzT)
+function[ initPredMatrix, Result4by4Matrix, stackFiveMatrixAvg ] = fiveTrainedInit(net, seqTrainxz, seqValxz,  seqTrainxzT)
 
-InitResultMatrix = zeros(4, 4, 5);
+initPredMatrix = zeros(4, 4, 5);
+stackFiveMatrix = zeros(4,1200, 5);
 
 for run = (1:5)
     predictTest = 0;
@@ -14,16 +15,21 @@ for run = (1:5)
     predictTest_pack = trainedNet(seqValxz);
     predictTest = cell2mat(predictTest_pack);
     
+    % Stack up all prediction data into 4 rows
+    stackFiveMatrix(:, :, run) = predictTest;
+    
     % Unpack x,z into 4 Movements
     properConfusionPredict =shrinkConfusion(predictTest);
     
     % Store in the 4 x 4 x 5 Matrix for all 5 runs
-    InitResultMatrix(:, :, run) = properConfusionPredict;
+    initPredMatrix(:, :, run) = properConfusionPredict;
+    
 end
 
-% Average out into 4 x 4 x 1 Matrix
-ResultMatrix = (InitResultMatrix(:, :, 1) + InitResultMatrix(:, :, 2) + InitResultMatrix(:, :, 3) + InitResultMatrix(:, :, 4) + InitResultMatrix(:, :, 5))/5;
 
+% Average out into 4 x 4 x 1 Matrix
+Result4by4Matrix = (initPredMatrix(:, :, 1) + initPredMatrix(:, :, 2) + initPredMatrix(:, :, 3) + initPredMatrix(:, :, 4) + initPredMatrix(:, :, 5))/5;
+stackFiveMatrixAvg = (stackFiveMatrix(:, :, 1) + stackFiveMatrix(:, :, 2) + stackFiveMatrix(:, :, 3) + stackFiveMatrix(:, :, 4) + stackFiveMatrix(:, :, 5))/5;
 end
 
 
