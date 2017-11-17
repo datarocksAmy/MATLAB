@@ -1,4 +1,4 @@
-% Train with 3 different depths and 3 different number of nodes
+% Train with 3 different depths and 3 different number of nodes = 9 combo
 
 % Different combinations of depths and number of nodes
 depthInput = [15, 30, 60];
@@ -34,14 +34,11 @@ for depthIdx = (1:3)
         count = 1;
         
         % Initialize Empty Vectors
-        %comboName = zeros(1, 9);
-        comboMatrix = zeros(4,4, 9);
+        comboMatrix = zeros(4, 4, 9);
         
         % Keep Track of depth and number of nodes
         netname = strcat('Depth', int2str(depthInput(depthIdx)), 'NodeNum', int2str(numNodes(nodeIdx)), '_Net');
-             
-        %comboName(count) = netname;
-        
+
         % Store Matrix
          comboMatrix(:, :, count) = InitResultMatrix;
          
