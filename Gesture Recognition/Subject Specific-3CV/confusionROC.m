@@ -10,7 +10,7 @@ overall = shrinkConfusion(cat(3, predictTestT1, predictTestT2, predictTestT3));
 
 % Plot ROC Curves for all three rounds individually and an overall ROC +
 % Save to folders!
-ezroc3( predictT1_4by4 );
+ezroc3( predictT1_4by4);
 saveas(figure(1), [pwd '\ROC\3CV\', person , '\', person, '_Fold1ROC.fig']);
 ezroc3( predictT2_4by4 );
 saveas(figure(2), [pwd '\ROC\3CV\', person , '\',  person, '_Fold2ROC.fig']);
