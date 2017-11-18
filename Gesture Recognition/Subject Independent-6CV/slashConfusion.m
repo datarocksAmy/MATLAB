@@ -21,7 +21,20 @@ down_downsize = [ mean(predictTest(4, 1:300)), mean(predictTest(4, 301:600)), me
     mean(predictTest(4, 1201:1500)), mean(predictTest(4, 1501:1800)), mean(predictTest(4, 1801:2100)), mean(predictTest(4, 2101:2400)), ...
     mean(predictTest(4, 2401:2700)), mean(predictTest(4, 2701:3000)), mean(predictTest(4, 3001:3300)), mean(predictTest(4, 3301:3600)) ];
 
+% Downsize again to go from 4x12 to 4x4
+circle_resize2 = [mean([circle_downsize(1,1), circle_downsize(1,5), circle_downsize(1,9)]), mean([circle_downsize(1,2), circle_downsize(1,6), circle_downsize(1,10)]), ...
+    mean([circle_downsize(1,3), circle_downsize(1,7), circle_downsize(1,11)]), mean([circle_downsize(1,4), circle_downsize(1,8), circle_downsize(1,12)])];
+
+triangle_resize2 = [mean([triangle_downsize(1,1), triangle_downsize(1,5), triangle_downsize(1,9)]), mean([triangle_downsize(1,2), triangle_downsize(1,6), triangle_downsize(1,10)]), ...
+    mean([triangle_downsize(1,3), triangle_downsize(1,7), triangle_downsize(1,11)]), mean([triangle_downsize(1,4), triangle_downsize(1,8), triangle_downsize(1,12)])];
+
+right_resize2 = [mean([right_downsize(1,1), right_downsize(1,5), right_downsize(1,9)]), mean([right_downsize(1,2), right_downsize(1,6), right_downsize(1,10)]), ...
+    mean([right_downsize(1,3), right_downsize(1,7), right_downsize(1,11)]), mean([right_downsize(1,4), right_downsize(1,8), right_downsize(1,12)])];
+
+down_resize2 = [mean([down_downsize(1,1), down_downsize(1,5), down_downsize(1,9)]), mean([down_downsize(1,2), down_downsize(1,6), down_downsize(1,10)]), ...
+    mean([down_downsize(1,3), down_downsize(1,7), down_downsize(1,11)]), mean([down_downsize(1,4), down_downsize(1,8), down_downsize(1,12)])];
+
 % A 4x4 Confusion Matrix with predicted values!
-confusionResize = [ circle_downsize; triangle_downsize; right_downsize; down_downsize ];
+confusionResize = [ circle_resize2; triangle_resize2; right_resize2; down_resize2 ];
 
 end

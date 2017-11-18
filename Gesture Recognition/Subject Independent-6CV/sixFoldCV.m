@@ -1,10 +1,7 @@
-% 3 Fold Cross Validation
+% 6 Fold Cross Validation
 function[ trained6CVnet, predictTestT1, predictTestT2, predictTestT3, predictTestT4, predictTestT5, predictTestT6, stackMovementTest]... 
-                                                                                                                                        = sixFoldCV(net, P1_xz, P2_xz, P3_xz,P4_xz,P5_xz,P6_xz)
+                                                                                                                                        = sixFoldCV(net, P1_data, P2_data, P3_data,P4_data,P5_data,P6_data)
 % -------------------------------------------------------------------------------------------------------------------------------
-% Create a matrix for each person with all three rounds of x and z data
-[P1_data, P2_data,P3_data, P4_data, P5_data, P6_data] = stackFivePeople( P1_xz, P2_xz, P3_xz,P4_xz,P5_xz,P6_xz);
-
 % Fold #1 Train (1-5) + Test Data (6)
 fold1Train = [ P1_data, P2_data,P3_data, P4_data, P5_data ];
 fold1Test = [ P6_data ];
