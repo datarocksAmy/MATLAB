@@ -28,25 +28,27 @@ stackMovementTest = [CTarget_Test; TTarget_Test; RTarget_Test; DTarget_Test];
 
 % Target for 6 CV
 elseif strcmp(foldType, '6 Fold') == 1
+isClass6CV = ones(1,900);
+notClass6CV = -ones(1,900);
 % Circle
-C = [isClass, notClass, notClass, notClass];
-CTarget_Train = repmat(C, 1, 15);
-CTarget_Test = repmat(C, 1, 3);
+C = [isClass6CV, notClass6CV, notClass6CV, notClass6CV];
+CTarget_Train = repmat(C, 1, 5);
+CTarget_Test = C;
 
 % Triangle
-T = [notClass, isClass, notClass, notClass];
-TTarget_Train = repmat(T, 1, 15);
-TTarget_Test = repmat(T, 1, 3);
+T = [notClass6CV, isClass6CV, notClass6CV, notClass6CV];
+TTarget_Train =  repmat(T, 1, 5);
+TTarget_Test =  T;
 
 % Right
-R = [notClass, notClass, isClass, notClass];
-RTarget_Train =repmat(R, 1, 15);
-RTarget_Test = repmat(R, 1, 3);
+R = [notClass6CV, notClass6CV, isClass6CV, notClass6CV];
+RTarget_Train =repmat(R, 1, 5);
+RTarget_Test = R;
 
 % Down
-D = [notClass, notClass, notClass, isClass];
-DTarget_Train = repmat(D, 1, 15);
-DTarget_Test = repmat(D, 1, 3);    
+D = [notClass6CV, notClass6CV, notClass6CV, isClass6CV];
+DTarget_Train =repmat(D, 1, 5);
+DTarget_Test = D;
 
 % Stack all 4 movements of targets for Training and Testing
 stackMovementTrain = [CTarget_Train; TTarget_Train; RTarget_Train; DTarget_Train];
