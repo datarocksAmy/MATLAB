@@ -12,7 +12,10 @@ for run = (1:5)
     trainedNet = train(net, Xs, Ts, Xi, Ai);
 
     % Validation
-    predictTest_pack = trainedNet(seqValxz);
+    netc= closeloop(trainedNet);
+    predictTest_pack = netc(seqValxz);
+    
+   % predictTest_pack = trainedNet(seqValxz, xic, aic);
     predictTest = cell2mat(predictTest_pack);
     
     % Stack up all prediction data into 4 rows

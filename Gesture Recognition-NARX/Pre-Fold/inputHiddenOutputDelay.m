@@ -8,7 +8,7 @@ function inputHiddenOutputDelay(P2_xz)
 % Different combinations of input delay, hidden layer and output delay
 inputDelay = [15, 30];
 hiddenLayer = [15, 30];
-outputDelay = [10, 20, 25];
+outputDelay = [10, 23, 28];
 count = 1;
 
 % Generate 8 different nets for all possible combinations, excluding the
@@ -25,7 +25,7 @@ for inputIdx = (1:2)
                 if outputDelay(outputIdx) < inputDelay(inputIdx)
                     % Train with 2 different input delay lines, 3 different output
                     % delay lines and 2 different hidden layer size
-                    NARXnet = narxnet(1:inputDelay(inputIdx), 1:outputDelay(outputIdx), hiddenLayer(hiddenIdx), 'trainbr');
+                    NARXnet = narxnet(1:inputDelay(inputIdx), 1:outputDelay(outputIdx), hiddenLayer(hiddenIdx), 'open','trainbr');
                     NARXnet.layers{2}.transferFcn = 'tansig';
                     NARXnet.divideParam.testRatio = 0;
                     NARXnet.trainParam.epochs = 100;
@@ -45,10 +45,6 @@ for inputIdx = (1:2)
                    % 5 Simulation Matrices then Average 5 dimension 4 x 4 to 1 dimension
                     [  initPredMatrix, Result4by4Matrix, stackFiveMatrixAvg ] = fiveTrainedInit(NARXnet, seqTrainxz, seqValxz,  seqTrainxzT);
 
-                    % Save Different NARX Nets
-                    % Closed Network Loop
-                    NARXnet_Closed = closeloop(NARXnet);
-
                     % Initialize Empty Vectors
                     comboMatrix = zeros(4, 4, 9);
 
@@ -59,16 +55,16 @@ for inputIdx = (1:2)
                     % Store Matrix
                      comboMatrix(:, :, count) = Result4by4Matrix;
 
-                     % Plot + Save ROC + Confusion Matrix
-                     %prefoldConfusionROC(stackMovementVal , initPredMatrix, stackFiveMatrixAvg, netname, count); 
+                     % Plot + Save ROC + Confusion Matrix 
                      prefoldConfusionROC(stackMovementVal , initPredMatrix, stackFiveMatrixAvg, Cnetname, count); 
 
                      % Save Net
-                     save(netname ,'NARXnet');
-                     save(Cnetname ,'NARXnet_Closed');
+                     save(Cnetname ,'NARXnet');
+                     fprintf('Trained finished', '\n');
                      count  = count + 1;
                 end
         end
     end
 end
+                  
 end
