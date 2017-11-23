@@ -4,8 +4,8 @@ function prefoldConfusionROC(stackMovementVal , InitResultMatrix, stackFiveMatri
 % ROC Curve + Save
 
 ezroc3(InitResultMatrix);
-saveas(figure(count), [pwd '\Prefold\ROC\', netname , '_ROC.jpg']);
-saveas(figure(count+1), [pwd '\Prefold\ROC\', netname , '_ROC.fig']);
+saveas(figure(count), [pwd '\NARX\Prefold\ROC\', netname , '_ROC.jpg']);
+saveas(figure(count), [pwd '\NARX\Prefold\ROC\', netname , '_ROC.fig']);
 
 % Plot Confusion Matrix
 % Class 1/--1 to 1/0
@@ -16,7 +16,7 @@ comboPredModify = (stackFiveMatrixAvg + 1)/2;
 confusionPre = plotconfusion(InitMovemntValModify, comboPredModify);
 
 % Save the matrix
-saveas(confusionPre, [pwd '\Prefold\Confusion\', netname , '_Confusion.jpg'])
-saveas(confusionPre, [pwd '\Prefold\Confusion\', netname , '_Confusion.fig'])
+saveas(confusionPre, [pwd '\NARX\Prefold\Confusion\', netname , '_Confusion.jpg'])
+saveas(confusionPre, [pwd '\NARX\Prefold\Confusion\', netname , '_Confusion.fig'])
 
 end

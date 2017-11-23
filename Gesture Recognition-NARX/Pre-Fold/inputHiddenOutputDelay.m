@@ -25,7 +25,7 @@ for inputIdx = (1:2)
                 if outputDelay(outputIdx) < inputDelay(inputIdx)
                     % Train with 2 different input delay lines, 3 different output
                     % delay lines and 2 different hidden layer size
-                    NARXnet = narxnet(1:inputDelay(inputIdx), 1:outputDelay(outputIdx), hiddenLayer(hiddenIdx), 'open','trainbr');
+                    NARXnet = narxnet(1:inputDelay(inputIdx), 1:outputDelay(outputIdx), hiddenLayer(hiddenIdx), 'trainbr');
                     NARXnet.layers{2}.transferFcn = 'tansig';
                     NARXnet.divideParam.testRatio = 0;
                     NARXnet.trainParam.epochs = 100;
@@ -41,15 +41,13 @@ for inputIdx = (1:2)
                     seqTrainxz = con2seq( trainxz );
                     seqTrainxzT = con2seq( stackMovementTrain );
                     seqValxz = con2seq( valxz );
-                     seqValxzT = con2seq(  stackMovementVal );
 
                    % 5 Simulation Matrices then Average 5 dimension 4 x 4 to 1 dimension
                     [  initPredMatrix, Result4by4Matrix, stackFiveMatrixAvg ] = fiveTrainedInit(NARXnet, seqTrainxz, seqValxz,  seqTrainxzT);
 
                     % Save Different NARX Nets
                     % Closed Network Loop
-                    %NARXnet_Closed = closeloop(NARXnet);
-                    %NARXnet_Closed.name = [NARXnet_Closed ' - Closed Loop'];
+                    NARXnet_Closed = closeloop(NARXnet);
 
                     % Initialize Empty Vectors
                     comboMatrix = zeros(4, 4, 9);
@@ -66,13 +64,11 @@ for inputIdx = (1:2)
                      prefoldConfusionROC(stackMovementVal , initPredMatrix, stackFiveMatrixAvg, Cnetname, count); 
 
                      % Save Net
-                     %save(netname ,'NARXnet');
-                     save(Cnetname ,'NARXnet');
-                     fprintf('Trained finished');
+                     save(netname ,'NARXnet');
+                     save(Cnetname ,'NARXnet_Closed');
                      count  = count + 1;
                 end
         end
     end
 end
-                  
 end
