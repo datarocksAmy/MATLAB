@@ -21,11 +21,13 @@ saveas(figure(4), [pwd '\committee\', person , '\', person, '_triNetROC.fig']);
 
 % Plot Confusion Matrix
 % Class 1/--1 to 1/0
-InitMovemntTestModify = (stackMovementTest + 1 )/2;
-lastRPredTestModify = (overall + 1)/2;
+threeDataStack = [ predictTestT1 predictTestT2 predictTestT3 ] ;
+movementLabel = [ stackMovementTest stackMovementTest stackMovementTest ];
+InitMovemntTestModify = (movementLabel + 1 )/2;
+PredTestModify = (threeDataStack + 1)/2;
 
 % Plot Confusion Matrix
-confusionG = plotconfusion(InitMovemntTestModify, lastRPredTestModify, person);
+confusionG = plotconfusion(InitMovemntTestModify, PredTestModify, person);
 % Save the matrix
 saveas(confusionG, [pwd '\committee\', person , '\',  person, '_Confusion.fig'])
 end
