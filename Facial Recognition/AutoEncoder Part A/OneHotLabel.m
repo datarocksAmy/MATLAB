@@ -1,5 +1,7 @@
 % Convert Labels into One Hot Encoding Labels
+function [train_Shuffle_D, train_T, test_Shuffle_D, test_T] = OneHotLabel()
 
+% Call function setupData for train and test shuffle data and labels
 [train_Shuffle_D, train_Shuffle_T, test_Shuffle_D, test_Shuffle_T] = setupData;
 
 % Initialize Targets as zeros
@@ -13,4 +15,6 @@ end
 
 for testLoop = 1:length(test_Shuffle_T)
     test_T(test_Shuffle_T(testLoop), testLoop) = 1;
+end
+
 end
