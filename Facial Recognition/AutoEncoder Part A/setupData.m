@@ -37,6 +37,7 @@ end
 
 % Shuffle Test Data + Label
 for testShuf = 1:160
+        %resizeTest = imresize(cell2mat(testData(testShuffle_Idx(testShuf)), [50, 50]));
        test_Shuffle_D = [ test_Shuffle_D testData(testShuffle_Idx(testShuf)) ];
        test_Shuffle_T = [ test_Shuffle_T testTarget(testShuffle_Idx(testShuf)) ];
 end

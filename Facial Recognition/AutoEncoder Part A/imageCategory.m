@@ -4,16 +4,28 @@ function [ train_img_vec, train_Label, test_img_vec, test_Label ] = imageCategor
 
 % Read in image values for each person
 faceNumM = int2str(faceNum);
-img1= imread(strcat('faceImg\s', faceNumM, '\1.pgm'));
-img2= imread(strcat('faceImg\s', faceNumM, '\2.pgm'));
-img3= imread(strcat('faceImg\s', faceNumM, '\3.pgm'));
-img4= imread(strcat('faceImg\s', faceNumM, '\4.pgm'));
-img5= imread(strcat('faceImg\s', faceNumM, '\5.pgm'));
-img6= imread(strcat('faceImg\s', faceNumM, '\6.pgm'));
-img7= imread(strcat('faceImg\s', faceNumM, '\7.pgm'));
-img8= imread(strcat('faceImg\s', faceNumM, '\8.pgm'));
-img9= imread(strcat('faceImg\s', faceNumM, '\9.pgm'));
-img10= imread(strcat('faceImg\s', faceNumM, '\10.pgm'));
+faceNumM = int2str(1);
+img1R= imread(strcat('faceImg\s', faceNumM, '\1.pgm'));
+img2R= imread(strcat('faceImg\s', faceNumM, '\2.pgm'));
+img3R= imread(strcat('faceImg\s', faceNumM, '\3.pgm'));
+img4R= imread(strcat('faceImg\s', faceNumM, '\4.pgm'));
+img5R= imread(strcat('faceImg\s', faceNumM, '\5.pgm'));
+img6R= imread(strcat('faceImg\s', faceNumM, '\6.pgm'));
+img7R= imread(strcat('faceImg\s', faceNumM, '\7.pgm'));
+img8R= imread(strcat('faceImg\s', faceNumM, '\8.pgm'));
+img9R= imread(strcat('faceImg\s', faceNumM, '\9.pgm'));
+img10R= imread(strcat('faceImg\s', faceNumM, '\10.pgm'));
+
+img1 = im2double(img1R);
+img2 = im2double(img2R);
+img3 = im2double(img3R);
+img4= im2double(img4R);
+img5 = im2double(img5R);
+img6 = im2double(img6R);
+img7 = im2double(img7R);
+img8 = im2double(img8R);
+img9 = im2double(img9R);
+img10 = im2double(img10R);
 
 % Randomly pick 6 for training and 4 for testing
 data_all = (1:10);
