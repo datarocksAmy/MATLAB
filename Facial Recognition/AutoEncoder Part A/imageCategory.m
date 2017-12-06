@@ -1,6 +1,6 @@
 % Load in images to create image vectos for testing and training / each person
 
-function [ train_img_vec, train_Label, test_img_vec, test_Label ] = imageCategory(faceNum)
+function [ train_img_vec, test_img_vec, train_Label, test_Label, train_Label2, test_Label2] = imageCategory(faceNum, sort_TrainCombo, sort_TestCombo)
 
 % Read in image values for each person
 faceNumM = int2str(faceNum);
@@ -16,6 +16,19 @@ img8R= imread(strcat('faceImg\s', faceNumM, '\8.pgm'));
 img9R= imread(strcat('faceImg\s', faceNumM, '\9.pgm'));
 img10R= imread(strcat('faceImg\s', faceNumM, '\10.pgm'));
 
+% Resize image into 90 x 90 pixels
+resize1 = imresize(img1R,[90 90]);
+resize2 = imresize(img2R,[90 90]);
+resize3 = imresize(img3R,[90 90]);
+resize4= imresize(img4R,[90 90]);
+resize5 = imresize(img5R,[90 90]);
+resize6 = imresize(img6R,[90 90]);
+resize7 = imresize(img7R,[90 90]);
+resize8 = imresize(img8R,[90 90]);
+resize9 = imresize(img9R,[90 90]);
+resize10 = imresize(img10R,[90 90]);
+
+% Convert image pixels from unit8 to double
 img1 = im2double(img1R);
 img2 = im2double(img2R);
 img3 = im2double(img3R);
@@ -39,10 +52,13 @@ train_img_vec = [{eval(strcat('img', int2str(trainDataPick(1))))} {eval(strcat('
 
 % Train Label for each category
 train_Label(1, 1:6) = faceNum;
+train_Label2(1, 1:length(sort_TrainCombo)) = faceNum;
 
 % Same for testing picks 
 test_img_vec = [{eval(strcat('img', int2str(trainDataPick(1))))} {eval(strcat('img', int2str(trainDataPick(2))))} {eval(strcat('img', int2str(trainDataPick(3))))} ...
 {eval(strcat('img', int2str(trainDataPick(4))))}];
+
 test_Label(1, 1:4) = faceNum;
+test_Label2(1, 1:length(sort_TestCombo)) = faceNum;
 
 end
