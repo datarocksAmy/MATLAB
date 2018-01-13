@@ -17,3 +17,8 @@ Deep Learining using Neural Network Toolbox + Finance Portfolio Selection with M
 > * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Gesture%20Recognition-NARX/Subject%20Independent%20-%206CV">NARX #3 -  Subject Independent : 6 Cross-Validation</a> </br>
 > * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Gesture%20Recognition-NARX/Committee/3CV">NARX #4 -  Committee : 3 Cross-Validation</a> </br>
 > * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Gesture%20Recognition-NARX/Committee/6CV">NARX #5 -  Committee : 6 Cross-Validation</a> </br>
+
+## Gesture Recognition - TDNN Net
+> * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Gesture%20Recognition-TDNN/Prefold">TDNN #1 - Prefold</a> </br>
+> * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Gesture%20Recognition-TDNN/Subject%20Specific-3CV">TDNN #2 - Subject Specific : 3 Cross-Validatioon</a> </br>
+> * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Gesture%20Recognition-TDNN/Subject%20Independent-6CV">TDNN #3 -  Subject Independent : 6 Cross-Validation</a> </br>
