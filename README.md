@@ -25,3 +25,6 @@ Deep Learining using Neural Network Toolbox + Finance Portfolio Selection with M
 
 ## Radial Basis Function - Exact + Regular
 > * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Radial%20Basis%20Function%20(Exact%20%26%20Regular)">RBF</a></br>
+
+## Portfolio Selection with MorningStar
+> * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Portfolio%20Selection%20Final%20Project)">Portfolio Selection 3-5 stars</a></br>
