@@ -23,7 +23,7 @@ Deep Learining using Neural Network Toolbox + Finance Portfolio Selection with M
 > * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Gesture%20Recognition-TDNN/Subject%20Specific-3CV">TDNN #2 - Subject Specific : 3 Cross-Validatioon</a> </br>
 > * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Gesture%20Recognition-TDNN/Subject%20Independent-6CV">TDNN #3 -  Subject Independent : 6 Cross-Validation</a> </br>
 
-## Fingerprint Spoof Detector - Bayes Classifier
+## Fingerprint Spoof Detector - Naive Bayes Classifier
 > * <a href=""></a></br>
 
 ## Radial Basis Function - Exact + Regular
