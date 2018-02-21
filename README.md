@@ -24,7 +24,8 @@ Deep Learining using Neural Network Toolbox + Finance Portfolio Selection with M
 > * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Gesture%20Recognition-TDNN/Subject%20Independent-6CV">TDNN #3 -  Subject Independent : 6 Cross-Validation</a> </br>
 
 ## Fingerprint Spoof Detector - Naive Bayes Classifier
-> * <a href=""></a></br>
+> * <a href="https://github.com/datarocksAmy/MATLAB/blob/master/Fingerprint%20Spoof%20Detector-Naive%20Bayes/Bayes_Fingerprint_Spoof_Detector.m"></a>Defalt Prior</br>
+> * <a href="https://github.com/datarocksAmy/MATLAB/blob/master/Fingerprint%20Spoof%20Detector-Naive%20Bayes/Bayes_Fingerprint_Spoof_Detector_prior.m"></a>Customized Prior</br>
 
 ## Radial Basis Function - Exact + Regular
 > * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Radial%20Basis%20Function%20(Exact%20%26%20Regular)">RBF</a></br>
