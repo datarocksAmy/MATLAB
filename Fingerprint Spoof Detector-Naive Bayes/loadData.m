@@ -1,3 +1,4 @@
+% Simple function to preprocess loaded data
 function [ liveTrain, liveTest, GelTrain, GelTest, LatexTrain, LatexTest] = loadData
 
 % Live fingerprints
