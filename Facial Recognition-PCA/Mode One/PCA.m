@@ -51,9 +51,6 @@ testCenter = testData_V - repmat(testMean,1,testCol);
 testProject = testCenter' * eigvector_sort;
 
 % Predicted labels from the test data
-testProjectPredict = testProject';
-testProjectPredict_M(2:size(featureMatrix,2)+1,:) = featureMatrix';
-dist=pdist(testProjectPredict_M);
-[a,b]=min(dist(:,1:size(featureMatrix,2)));
-
-%end
+testProjectPredict = vertcat(testProject', featureMatrix);
+dist=pdist(testProjectPredict);
+%[a,b]=min(dist(:,1:size(featureMatrix,2)));

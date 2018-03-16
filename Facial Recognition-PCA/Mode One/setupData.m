@@ -1,4 +1,4 @@
-% Set up train (60%) and testing data (40%) for all 40 people
+% Set up train and testing data for all 40 people
 function [trainData, trainTarget, testData, testTarget] = setupData
 
 % Initialize Cell Arrays to store all train and test Data
@@ -12,8 +12,8 @@ for faceNum = 1:40
      [ train_img_vec, test_img_vec, train_Label, test_Label, train_GLabel, testG_Label ] = imgPrepModeOne(faceNum, 0, 0);
     
     % Set up Train + Test Image Data
-    trainData = [trainData ;train_img_vec];
-    testData = [testData ;test_img_vec];
+    trainData = [trainData; train_img_vec];
+    testData = [testData; test_img_vec];
     
     % Set Up Train + Test Image Label
     trainTarget = [trainTarget train_Label];

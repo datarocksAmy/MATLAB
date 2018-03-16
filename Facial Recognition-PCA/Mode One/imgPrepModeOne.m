@@ -16,29 +16,29 @@ img8R= imread(strcat('faceImg\s', faceNumM, '\8.pgm'));
 img9R= imread(strcat('faceImg\s', faceNumM, '\9.pgm'));
 img10R= imread(strcat('faceImg\s', faceNumM, '\10.pgm'));
 
-% Resize image into 90 x 90 pixels
-resize1 = imresize(img1R,[90 90]);
-resize2 = imresize(img2R,[90 90]);
-resize3 = imresize(img3R,[90 90]);
-resize4= imresize(img4R,[90 90]);
-resize5 = imresize(img5R,[90 90]);
-resize6 = imresize(img6R,[90 90]);
-resize7 = imresize(img7R,[90 90]);
-resize8 = imresize(img8R,[90 90]);
-resize9 = imresize(img9R,[90 90]);
-resize10 = imresize(img10R,[90 90]);
+% Resize image into 50 x 50 pixels
+resize1 = imresize(img1R,[50 50]);
+resize2 = imresize(img2R,[50 50]);
+resize3 = imresize(img3R,[50 50]);
+resize4= imresize(img4R,[50 50]);
+resize5 = imresize(img5R,[50 50]);
+resize6 = imresize(img6R,[50 50]);
+resize7 = imresize(img7R,[50 50]);
+resize8 = imresize(img8R,[50 50]);
+resize9 = imresize(img9R,[50 50]);
+resize10 = imresize(img10R,[50 50]);
 
 % Convert image pixels from unit8 to double
-img1 = im2double(img1R);
-img2 = im2double(img2R);
-img3 = im2double(img3R);
-img4= im2double(img4R);
-img5 = im2double(img5R);
-img6 = im2double(img6R);
-img7 = im2double(img7R);
-img8 = im2double(img8R);
-img9 = im2double(img9R);
-img10 = im2double(img10R);
+img1 = im2double(resize1);
+img2 = im2double(resize2);
+img3 = im2double(resize3);
+img4= im2double(resize4);
+img5 = im2double(resize5);
+img6 = im2double(resize6);
+img7 = im2double(resize7);
+img8 = im2double(resize8);
+img9 = im2double(resize9);
+img10 = im2double(resize10);
 
 % Randomly pick 5 for training and 5 for testing
 data_all = (1:10);
