@@ -5,10 +5,10 @@ function[ImpostorVec] = ImpostorCalc(featureMatrixAgg, testProjectAgg)
 ImpostorVec = [];
 
 % Loop through feature matrices
-for FM_idx = 1 : 40
+for FM_idx = 1 : size(featureMatrixAgg, 3)
     PersonImpostor = [];
     % Loop through projected matrices to calculate scores
-    for TP_idx = 1 : 40
+    for TP_idx = 1 : size(testProjectAgg, 3)
         
           % If not itself, do the math!
          if FM_idx ~= TP_idx 

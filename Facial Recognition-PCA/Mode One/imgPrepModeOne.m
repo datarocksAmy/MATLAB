@@ -4,7 +4,6 @@ function [ train_img_vec, test_img_vec, train_Label, test_Label, train_Label2, t
 
 % Read in image values for each person
 faceNumM = int2str(faceNum);
-faceNumM = int2str(1);
 img1R= imread(strcat('faceImg\s', faceNumM, '\1.pgm'));
 img2R= imread(strcat('faceImg\s', faceNumM, '\2.pgm'));
 img3R= imread(strcat('faceImg\s', faceNumM, '\3.pgm'));

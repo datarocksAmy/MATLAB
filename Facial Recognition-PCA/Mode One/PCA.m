@@ -47,7 +47,7 @@ featureMatrix = filteredEigVec' * trainCenter;
 testCenter = testData_V - repmat(testMean,1,testCol);
 
 % Project testing data to the Train Projected Space
-testProject = eigvector_sort' * testCenter;
+testProject = filteredEigVec' * testCenter;
 
 % Genuine Scores
 GenuineScore  = pdist2(featureMatrix, testProject, 'euclidean');
