@@ -16,17 +16,17 @@ img8R= imread(strcat('faceImg\s', faceNumM, '\8.pgm'));
 img9R= imread(strcat('faceImg\s', faceNumM, '\9.pgm'));
 img10R= imread(strcat('faceImg\s', faceNumM, '\10.pgm'));
 
-% Resize image into 50 x 50 pixels
-resize1 = imresize(img1R,[50 50]);
-resize2 = imresize(img2R,[50 50]);
-resize3 = imresize(img3R,[50 50]);
-resize4= imresize(img4R,[50 50]);
-resize5 = imresize(img5R,[50 50]);
-resize6 = imresize(img6R,[50 50]);
-resize7 = imresize(img7R,[50 50]);
-resize8 = imresize(img8R,[50 50]);
-resize9 = imresize(img9R,[50 50]);
-resize10 = imresize(img10R,[50 50]);
+% Resize image into 10 x 10 pixels
+resize1 = imresize(img1R,[10 10]);
+resize2 = imresize(img2R,[10 10]);
+resize3 = imresize(img3R,[10 10]);
+resize4= imresize(img4R,[10 10]);
+resize5 = imresize(img5R,[10 10]);
+resize6 = imresize(img6R,[10 10]);
+resize7 = imresize(img7R,[10 10]);
+resize8 = imresize(img8R,[10 10]);
+resize9 = imresize(img9R,[10 10]);
+resize10 = imresize(img10R,[10 10]);
 
 % Convert image pixels from unit8 to double
 img1 = im2double(resize1);

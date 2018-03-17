@@ -1,11 +1,8 @@
 % Calculate Impostor Scores from feature matrix and projected value
-
-
 function[ImpostorVec] = ImpostorCalc(featureMatrixAgg, testProjectAgg)
 
 % Initialize vector
 ImpostorVec = [];
-
 
 % Loop through feature matrices
 for FM_idx = 1 : 40
@@ -17,7 +14,6 @@ for FM_idx = 1 : 40
          if FM_idx ~= TP_idx 
 
             % Calc Euclidean Distance for impostor scores
-           % impostorScore = pdist2(featureMatrixAgg(:,:, 1), testProjectAgg(:,:, 2), 'euclidean');
             impostorScore = pdist2(featureMatrixAgg(:,:, TP_idx), testProjectAgg(:,:, FM_idx), 'euclidean');
             PersonImpostor = [PersonImpostor, impostorScore];
          end
