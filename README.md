@@ -6,10 +6,14 @@ Deep Learining using Neural Network Toolbox + Finance Portfolio Selection with M
 > * <a href="https://github.com/datarocksAmy/MATLAB/blob/master/Artificial%20Neural%20Network/NNminiProject1_b.m">ANN #2 - 2 Nodes & 50 Nodes + 1 Hidden Later</a> </br>
 > * <a href="https://github.com/datarocksAmy/MATLAB/blob/master/Artificial%20Neural%20Network/NNminiProject1_c.m">ANN #3 - Add regularization term</a> </br>
 
-## Facial Recognition using AutoEncoder
+## Facial Recognition - AutoEncoder
 > * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Facial%20Recognition/AutoEncoder%20OldSchool">AutoEncoder #1 - Traditional Approach</a> </br>
 > * <a href="https://github.com/datarocksAmy/MATLAB/blob/master/Facial%20Recognition/AutoEncoder%20Part%20A/AutoEncoder_PartA.m">AutoEncoder #2 - Subject Specific : MSE Geuine and Imposter Scores </a> </br>
 > * <a href="https://github.com/datarocksAmy/MATLAB/blob/master/Facial%20Recognition/AutoEncoder%20Part%20B/AutoEncoder_PartB.m">AutoEncoder #3 -  Subject Independent</a> </br>
+
+## Facial Recoginition - PCA
+> * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Facial%20Recognition-PCA/Mode%20One">Mode #1</a></br>
+> * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Facial%20Recognition-PCA/Mode%20Two">Mode #2</a></br>
 
 ## Gesture Recognition - NARX Net
 > * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Gesture%20Recognition-NARX/Pre-Fold">NARX #1 - Prefold</a> </br>
