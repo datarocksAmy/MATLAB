@@ -11,9 +11,11 @@ Deep Learining using Neural Network Toolbox + Finance Portfolio Selection with M
 > * <a href="https://github.com/datarocksAmy/MATLAB/blob/master/Facial%20Recognition/AutoEncoder%20Part%20A/AutoEncoder_PartA.m">AutoEncoder #2 - Subject Specific : MSE Geuine and Imposter Scores </a> </br>
 > * <a href="https://github.com/datarocksAmy/MATLAB/blob/master/Facial%20Recognition/AutoEncoder%20Part%20B/AutoEncoder_PartB.m">AutoEncoder #3 -  Subject Independent</a> </br>
 
-## Facial Recoginition - PCA
+
+## Facial Recognition - PCA & LDA
 > * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Facial%20Recognition-PCA/Mode%20One">PCA #1 : Mode #1</a></br>
 > * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Facial%20Recognition-PCA/Mode%20Two">PCA #2 : Mode #2</a></br>
+> * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Facial%20Recognition-LDA">LDA</a></br>
 
 ## Gesture Recognition - NARX Net
 > * <a href="https://github.com/datarocksAmy/MATLAB/tree/master/Gesture%20Recognition-NARX/Pre-Fold">NARX #1 - Prefold</a> </br>
