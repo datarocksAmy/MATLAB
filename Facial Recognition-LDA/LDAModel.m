@@ -1,4 +1,5 @@
-%function[] = LDAModel()
+% Set up Train, Test Data and build LDA Model
+function[V, eigvector_sort, eigenVal, trainImg, testImg] = LDAModel()
 
 % Initialize 
 trainImg = [];
@@ -24,7 +25,7 @@ mu = mean(trainImg_mean_class);
 
 % Center the data (data-mean)
 for idx = 1:40
-    center = (trainImg(:, :, idx))-repmat(trainImg_mean_class(idx, :),size(trainImg_mean_class(idx, :),1),1);
+    center = (trainImg(:, :, idx))-repmat(trainImg_mean_class(idx, :),size(trainImg(:, :, idx),1),1);
     %trainImg_center = cat(3, trainImg_center, center);    
     
     % Calculate the within class variance (SW)
@@ -38,7 +39,7 @@ inv_SW=inv(SW);
 
 % Calculate between class variance (SB)
 for trainImgC = 1:40
-    between_class_var = 10 * (trainImg_mean_class(trainImgC, :)-mu)'* (trainImg_mean_class(trainImgC,:)-mu);
+    between_class_var = size(trainImg(:, :, trainImgC),1) * (trainImg_mean_class(trainImgC, :)-mu)'* (trainImg_mean_class(trainImgC,:)-mu);
    %SB = cat(3, SB, between_class_var);
    SB = SB +between_class_var;
 end
@@ -49,6 +50,20 @@ V = inv_SW * SB;
 % Get Eigenvalue and Eigenvectors of V
 [eigenVec, eigenVal] = eig(V);
 
-% Project Test and Train into Subspace
+eigval_diagnal = diag(eigenVal);
+[other, index] = sort(eigval_diagnal,'descend');
+eigval_diagnal = eigval_diagnal(index);
+eigvector_sort = eigenVec(:, index);
 
-%end
+% Pick out eigen values based on threshold
+countNumEig = 0;
+for count = 1:size(eigval_diagnal,1)
+    if(eigval_diagnal(count)>0)     
+        countNumEig = countNumEig + 1;
+    end
+end
+
+% Filtered eigen vectors
+filteredEigVec = eigvector_sort(:, 1:countNumEig);
+
+end
