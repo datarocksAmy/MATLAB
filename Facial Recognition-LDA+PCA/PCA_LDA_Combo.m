@@ -18,7 +18,7 @@ testfeature = [];
  
 
 % Calculate Genuine and Impostor Scores
-[GI] = Calc_Genuine_Impostor(comboT, comboTest, V);
+[GI] = Calc_Genuine_Impostor(trainfeature, testfeature, V);
 
 % Label
 [Label] = label();
