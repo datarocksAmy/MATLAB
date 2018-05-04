@@ -1,5 +1,5 @@
 % Set up Train, Test Data and build LDA Model
-function[V, eigvector_sort, eigenVal, trainImg, testImg] = LDAModel()
+function[V, eigvector_sort, eigenVal, trainImg, testImg] = LDA_Model()
 
 % Initialize 
 trainImg = [];
@@ -10,7 +10,7 @@ SW = zeros(10, 10);
 
  % Load in Images & Calculate Mean for Each Class
 for faceNum = 1:40
-     [ train_img_vec, test_img_vec, train_Label, test_Label ] = imgPrep(faceNum);
+     [ train_img_vec, test_img_vec, train_Label, test_Label ] = LDA_imgPrep(faceNum);
      trainImg = cat(3, trainImg, cell2mat(train_img_vec'));
      testImg = cat(3, testImg, cell2mat(test_img_vec'));    
      

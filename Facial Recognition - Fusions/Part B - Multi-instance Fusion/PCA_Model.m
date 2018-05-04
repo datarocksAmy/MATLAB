@@ -1,6 +1,6 @@
 % Principal Component Analysis (PCA Model)
 
-function [featureMatrix, testProject, GenuineScore] = PCA(trainData, testData)
+function [featureMatrix, testProject, GenuineScore] = PCA_Model(trainData, testData)
 
 % Unpack Cell to Vector
 trainData_V = cell2mat(trainData);

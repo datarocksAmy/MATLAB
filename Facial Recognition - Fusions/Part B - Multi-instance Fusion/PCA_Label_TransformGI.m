@@ -1,6 +1,6 @@
 % Create Label and transform GI vector to 0-1
 
-function [testLabels, GI_convert]=Label_TransformGI(GI)
+function [testLabels, GI_convert]=PCA_Label_TransformGI(GI)
 
 % Labels for data
  Labels = zeros(size(GI,1),size(GI,1));

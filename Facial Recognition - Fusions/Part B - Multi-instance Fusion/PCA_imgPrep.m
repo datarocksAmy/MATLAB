@@ -1,6 +1,6 @@
 % Load in images to create image vectos for testing and training / each person
 
-function [ train_img_vec, test_img_vec, train_Label, test_Label, train_Label2, test_Label2] = imgPrepModeOne(faceNum, sort_TrainCombo, sort_TestCombo)
+function [ train_img_vec, test_img_vec, train_Label, test_Label, train_Label2, test_Label2] = PCA_imgPrep(faceNum, sort_TrainCombo, sort_TestCombo)
 
 % Read in image values for each person
 faceNumM = int2str(faceNum);

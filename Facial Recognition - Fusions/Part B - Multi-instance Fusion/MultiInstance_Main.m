@@ -7,7 +7,10 @@ close all
 clear all
 
 % Original PCA and LDA Model
-
+[LDA_GI, LDA_Labels] = LDA_Main();
+ezroc3(LDA_GI, LDA_Labels);
+[PCA_GI, PCA_Labels] = PCA_Main();
+ezroc3(PCA_GI, PCA_Labels);
 
 
 % PCA Model Multi-instance -- Something still off

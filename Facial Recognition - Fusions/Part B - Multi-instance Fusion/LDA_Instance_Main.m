@@ -5,7 +5,7 @@
 function[LDA_GI_Instance, LDA_Labels_Instance] = LDA_Instance_Main()
 
 % Build LDA Model
-[V, eigenVec, eigenVal, trainImg, testImg] = LDAModel();
+[V, eigenVec, eigenVal, trainImg, testImg] = LDA_Model();
 
 % Calculate Genuine and Impostor Scores
 [LDA_GI_Instance] = GICalc_Instance_LDA(trainImg, testImg, V);

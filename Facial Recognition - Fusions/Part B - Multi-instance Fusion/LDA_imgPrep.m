@@ -1,6 +1,6 @@
 % Load in images to create image vectos for testing and training / each person
 
-function [ train_img_vec, test_img_vec, train_Label, test_Label] = imgPrep(faceNum)
+function [ train_img_vec, test_img_vec, train_Label, test_Label] = LDA_imgPrep(faceNum)
 % Read in image values for each person
 faceNumM = int2str(faceNum);
 img1R= imread(strcat('faceImg\s', faceNumM, '\1.pgm'));
