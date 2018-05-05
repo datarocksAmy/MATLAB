@@ -38,7 +38,7 @@ MAX_ScoreFusion_GI = max(LDA_GI, PCA_GI);
  % Plot FAR and FRR for all methods
 figure;
 plot(LDA_FAR, LDA_FRR, 'LineWidth', 2);
-title('FRR v.s FPR for all methods');
+title({'[ LDA & PCA Models ]'; 'Regular v.s. Score-Level Fusion'});
 xlabel('FAR(FPR)');
 ylabel('FRR(FNR)');
 hold on;

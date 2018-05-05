@@ -33,7 +33,7 @@ clear all
  % Plot FAR and FRR to compare Regular v.s. Multi-Instance Fusion
 figure;
 plot(LDA_FAR, LDA_FRR, 'LineWidth', 2);
-title('LDA & PCA Regular v.s. Multi-Instance Fusion');
+title({'[ LDA & PCA Models ]'; 'Regular v.s. Multi-Instance Fusion'});
 xlabel('FAR(FPR)');
 ylabel('FRR(FNR)');
 hold on;
@@ -43,6 +43,3 @@ plot(PCA_Instance_FAR, PCA_Instance_FRR, 'LineWidth', 2);
 
 hold off;
 legend('LDA', 'PCA', 'LDA Instance', 'PCA Instance');
-
-
-
